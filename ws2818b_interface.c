@@ -40,8 +40,20 @@ void matriz_update(PIO pio, uint sm, const int matriz[5][5])
     {
         int i = translated_indexes[k][0];
         int j = translated_indexes[k][1];
+        pio_sm_put_blocking(pio, sm, 0);
         pio_sm_put_blocking(pio, sm, matriz[i][j]);
-        pio_sm_put_blocking(pio, sm, matriz[i][j]);
-        pio_sm_put_blocking(pio, sm, matriz[i][j]);
+        pio_sm_put_blocking(pio, sm, 0);
+    }
+}
+
+void matriz_clear(PIO pio, uint sm)
+{
+    for (int k = 0; k < LED_COUNT; k++)
+    {
+        int i = translated_indexes[k][0];
+        int j = translated_indexes[k][1];
+        pio_sm_put_blocking(pio, sm, 0);
+        pio_sm_put_blocking(pio, sm, 0);
+        pio_sm_put_blocking(pio, sm, 0);
     }
 }

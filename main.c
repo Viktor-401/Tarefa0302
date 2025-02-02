@@ -9,6 +9,7 @@
 #include "ws2818b_interface.c" //Interface criada pelo autor, para facilitar a utilização da matriz
 #include "numbers.c" //Matrizes correspontentes aos números de 0 a 9
 #include <math.h>
+#include "hardware/pwm.h"
 
 #define RED_LED_PIN 13
 #define BUTTON_A 5
@@ -21,6 +22,7 @@ bool debounce();
 void blink_pin_forever(PIO pio, uint sm, uint offset, uint pin, uint freq);
 //Callback da interrupção do botão
 void button_press(uint gpio, uint32_t events); 
+void configure_pwm(uint gpio);
 
 PIO pio = pio0;
 //Index das states machines
