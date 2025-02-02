@@ -3,6 +3,7 @@
 ## Circuito no Wokwi
 
 No circuito, foram empregados, 2 push-buttons, Matriz de Leds 5x5 e um microcontrolador Raspberry Pi Pico W.
+![image](https://github.com/user-attachments/assets/f5399e95-61c0-4848-b7a9-690a47ac7ef9)
 
 ## Funcionamento
 
@@ -24,9 +25,9 @@ No código foram utilizados interrupções, debouncers via software e 2 máquina
 - Linguagem C
 - Kit de desenvolvimento de Software Pico (Pico SDK)
 
-## Vídeo de Apresentação
+## Vídeo de Demonstração
 
-A seguir o vídeo apresentando o circuito em funcionamento.
+O vídeo de demonstração foi enviado em conjunto com o link para este repositório, na tarefa do dia 27/01 do curso CEPEDI Embarca Tech.
 
 ## Execução do projeto
 
