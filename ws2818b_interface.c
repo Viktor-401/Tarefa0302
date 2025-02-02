@@ -1,8 +1,10 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
 
-#define LED_COUNT 25
+#define LED_COUNT 25 //Quantidade de leds na matriz
 
+//Como a fita de led utilizada na matriz é indexada linearmente, traduzi cada index para uma coordenada em uma matriz 5X5
+//Não é necessário, mas facilita a visualização da matriz no código, e ter certeza de como ela aparecerá na matriz de leds
 const int translated_indexes[LED_COUNT][2] = {
     {4,4},
     {4,3},
@@ -31,6 +33,7 @@ const int translated_indexes[LED_COUNT][2] = {
     {0,0}
     };
 
+//Recebe uma matriz 5x5 composta por 0 e 1, e mostra um desenho monocromático na matriz de leds
 void matriz_update(PIO pio, uint sm, const int matriz[5][5])
 {
     for (int k = 0; k < LED_COUNT; k++)
