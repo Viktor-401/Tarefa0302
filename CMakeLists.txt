@@ -42,6 +42,7 @@ pico_set_program_version(Tarefa_27-01 "0.1")
 
 # Generate PIO header
 pico_generate_pio_header(Tarefa_27-01 ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
+pico_generate_pio_header(Tarefa_27-01 ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
 pico_enable_stdio_uart(Tarefa_27-01 0)
@@ -51,6 +52,7 @@ pico_enable_stdio_usb(Tarefa_27-01 1)
 target_link_libraries(Tarefa_27-01
         pico_stdlib
         hardware_pwm
+        hardware_i2c
         )
 
 # Add the standard include files to the build

@@ -10,6 +10,7 @@
 #include "numbers.c" //Matrizes correspontentes aos números de 0 a 9
 #include <math.h>
 #include "hardware/pwm.h"
+// #include "hardware/i2c.h"
 
 #define RED_LED_PIN 13
 #define BUTTON_A 5
