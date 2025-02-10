@@ -28,43 +28,42 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(Tarefa_27-01 C CXX ASM)
+project(Tarefa0302 C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(Tarefa_27-01 main.c )
+add_executable(Tarefa0302 main.c )
 
-pico_set_program_name(Tarefa_27-01 "Tarefa_27-01")
-pico_set_program_version(Tarefa_27-01 "0.1")
+pico_set_program_name(Tarefa0302 "Tarefa0302")
+pico_set_program_version(Tarefa0302 "0.1")
 
 # Generate PIO header
-pico_generate_pio_header(Tarefa_27-01 ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
-pico_generate_pio_header(Tarefa_27-01 ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
+pico_generate_pio_header(Tarefa0302 ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
+pico_generate_pio_header(Tarefa0302 ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(Tarefa_27-01 0)
-pico_enable_stdio_usb(Tarefa_27-01 1)
+pico_enable_stdio_uart(Tarefa0302 0)
+pico_enable_stdio_usb(Tarefa0302 1)
 
 # Add the standard library to the build
-target_link_libraries(Tarefa_27-01
+target_link_libraries(Tarefa0302
         pico_stdlib
         hardware_pwm
         hardware_i2c
         )
 
 # Add the standard include files to the build
-target_include_directories(Tarefa_27-01 PRIVATE
+target_include_directories(Tarefa0302 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(Tarefa_27-01 
+target_link_libraries(Tarefa0302 
         hardware_pio
-        
         )
 
-pico_add_extra_outputs(Tarefa_27-01)
+pico_add_extra_outputs(Tarefa0302)
 
